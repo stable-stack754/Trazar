@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TRAZAR SMP Store</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Segoe UI',sans-serif;
+      background:
+      radial-gradient(circle at top,#123768 0%,#0b1220 45%,#050816 100%);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* BACKGROUND GLOW */
+    body::before{
+      content:"";
+      position:fixed;
+      width:600px;
+      height:600px;
+      background:#00d5ff2d;
+      filter:blur(120px);
+      top:-200px;
+      left:-200px;
+      z-index:-1;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:#0066ff2d;
+      filter:blur(120px);
+      bottom:-200px;
+      right:-150px;
+      z-index:-1;
+    }
+
+    /* HERO */
+    .hero{
+      text-align:center;
+      padding:90px 20px 70px;
+    }
+
+    .hero h1{
+      font-size:70px;
+      font-weight:900;
+      background:linear-gradient(90deg,#00D4FF,#0066FF);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow:0 0 30px rgba(0,212,255,0.4);
+      letter-spacing:3px;
+    }
+
+    .hero p{
+      margin-top:15px;
+      color:#b7c4d8;
+      font-size:18px;
+    }
+
+    /* STORE GRID */
+    .store{
+      max-width:1400px;
+      margin:auto;
+      padding:20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    /* CARD */
+    .card{
+      position:relative;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:30px 25px;
+      backdrop-filter:blur(14px);
+      overflow:hidden;
+      transition:0.35s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.02);
+      border:1px solid #00D4FF;
+      box-shadow:
+      0 10px 30px rgba(0,212,255,0.15),
+      0 0 40px rgba(0,102,255,0.15);
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      background:linear-gradient(135deg,#00D4FF,#0066FF);
+      opacity:0.15;
+      border-radius:50%;
+      top:-40px;
+      right:-40px;
+    }
+
+    .rank{
+      font-size:30px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    .price{
+      font-size:22px;
+      color:#00D4FF;
+      font-weight:700;
+      margin-bottom:22px;
+    }
+
+    .features{
+      text-align:left;
+      margin-bottom:25px;
+      color:#cdd7e7;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    .features div{
+      margin-bottom:6px;
+    }
+
+    /* BUTTON */
+    .btn{
+      display:block;
+      width:100%;
+      text-align:center;
+      padding:14px;
+      border-radius:14px;
+      text-decoration:none;
+      color:white;
+      font-weight:700;
+      background:linear-gradient(90deg,#00D4FF,#0066FF);
+      transition:0.3s;
+      box-shadow:0 0 15px rgba(0,212,255,0.25);
+    }
+
+    .btn:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 25px rgba(0,212,255,0.45);
+    }
+
+    /* BEST SELLER */
+    .best{
+      border:1px solid #00D4FF;
+      box-shadow:0 0 35px rgba(0,212,255,0.18);
+    }
+
+    .tag{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:linear-gradient(90deg,#00D4FF,#0066FF);
+      color:white;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    footer{
+      text-align:center;
+      padding:45px 20px;
+      color:#7f8da5;
+      font-size:14px;
+    }
+
+    /* MOBILE */
+    @media(max-width:700px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .store{
+        padding:15px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <h1>TRAZAR SMP</h1>
+    <p>Premium Minecraft Survival Experience</p>
+  </section>
+
+  <section class="store">
+
+    <div class="card">
+      <div class="rank">Herald</div>
+      <div class="price">Rp10.000</div>
+
+      <div class="features">
+        <div>✦ /Heal</div>
+        <div>✦ Coins: 100</div>
+        <div>✦ Kit Herald</div>
+      </div>
+
+      <a class="btn"
+      href="https://wa.me/628XXXXXXXXXX?text=Halo%20min%20mau%20beli%20rank%20Herald%0ANama%20:">
+      Buy Now
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="rank">Guardian</div>
+      <div class="price">Rp40.000</div>
+
+      <div class="features">
+        <div>✦ /Feed</div>
+        <div>✦ Coins: 300</div>
+        <div>✦ Kit Guardian</div>
+      </div>
+
+      <a class="btn"
+      href="https://wa.me/628XXXXXXXXXX?text=Halo%20min%20mau%20beli%20rank%20Guardian%0ANama%20:">
+      Buy Now
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="rank">Crusader</div>
+      <div class="price">Rp70.000</div>
+
+      <div class="features">
+        <div>✦ /Anvil</div>
+        <div>✦ Coins: 500</div>
+        <div>✦ Kit Crusader</div>
+      </div>
+
+      <a class="btn"
+      href="https://wa.me/628XXXXXXXXXX?text=Halo%20min%20mau%20beli%20rank%20Crusader%0ANama%20:">
+      Buy Now
+      </a>
+    </div>
+
+    <div class="card best">
+      <div class="tag">POPULAR</div>
+
+      <div class="rank">Archon</div>
+      <div class="price">Rp100.000</div>
+
+      <div class="features">
+        <div>✦ /Nick</div>
+        <div>✦ Coins: 700</div>
+        <div>✦ Kit Archon</div>
+      </div>
+
+      <a class="btn"
+      href="https://wa.me/628XXXXXXXXXX?text=Halo%20min%20mau%20beli%20rank%20Archon%0ANama%20:">
+      Buy Now
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="rank">Legend</div>
+      <div class="price">Rp150.000</div>
+
+      <div class="features">
+        <div>✦ /Speed</div>
+        <div>✦ Coins: 1000</div>
+        <div>✦ Kit Legend</div>
+      </div>
+
+      <a class="btn"
+      href="https://wa.me/628XXXXXXXXXX?text=Halo%20min%20mau%20beli%20rank%20Legend%0ANama%20:">
+      Buy Now
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="rank">Anchient</div>
+      <div class="price">Rp200.000</div>
+
+      <div class="features">
+        <div>✦ /Teleport</div>
+        <div>✦ Coins: 1300</div>
+        <div>✦ Kit Anchient</div>
+      </div>
+
+      <a class="btn"
+      href="https://wa.me/628XXXXXXXXXX?text=Halo%20min%20mau%20beli%20rank%20Ancient%0ANama%20:">
+      Buy Now
+      </a>
+    </div>
+
+    <div class="card best">
+      <div class="tag">BEST</div>
+
+      <div class="rank">Divine</div>
+      <div class="price">Rp300.000</div>
+
+      <div class="features">
+        <div>✦ /Vanish</div>
+        <div>✦ Coins: 1500</div>
+        <div>✦ Kit Divine</div>
+      </div>
+
+      <a class="btn"
+      href="https://wa.me/628XXXXXXXXXX?text=Halo%20min%20mau%20beli%20rank%20Divine%0ANama%20:">
+      Buy Now
+      </a>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 TRAZAR SMP • STORE
+  </footer>
+
+</body>
+</html>
